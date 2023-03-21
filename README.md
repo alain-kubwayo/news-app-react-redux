@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# News App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is an intermediate React-Redux project whose goal is to showcase news articles while making use of the [News API](https://newsapi.org)
 
-## Available Scripts
+## Project Requirements
+### Technological Requirements:
 
-In the project directory, you can run:
+1. All news publishers, news articles, article contents, article images and article titles mentioned in the requirements below should be fetched using the News API.
+2. Use JavaScript ES6 features such as arrow functions, template literals, destructuring, let and const, classes, spread and rest operators.
+3. Use promises and async/await to improve code readability and maintainability.
+4. Use Redux to fetch and store the states of articles and sources.
+5. Use a public github repository.
+6. Deploy the application to Netlify.
 
-### `npm start`
+### UX:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. On the homepage, display the top 10 articles of the day. Don’t display the entire article. The article image and its title are enough.
+2. Above, below or next to the top 10 articles, display a list of all news publishers that are available through the News API. (In the News API the news publishers are called “source”.)
+3. When a user clicks on one of the top 10 articles, the application should display the full article.
+4. When a user clicks on one of the news publishers, the application should display a page showing a list of articles from that publisher.
+5. When a user clicks on one of the articles in that list, the application should display the full article.
+6. The app should contain a search bar that allows users to search for articles based on keywords.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### UI:
 
-### `npm test`
+1. Develop a responsive design that is compatible with all modern web browsers.
+2. Beyond the UX specifications mentioned above, there are no detailed design-specifications for this app. You can decide on the design yourself. It does not need to be fancy. But it must make consistent use of fonts, colors and other visual elements and be well-aligned.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Running the project locally:
 
-### `npm run build`
+In the directory where you want to save the project, run the following commands:
+1. `git clone https://github.com/alain-kubwayo/news-app-react-redux.git .`
+2. `npm install` to install all the project dependencies.
+3. `npm start` to run the app in the development mode.
+4. Open [http://localhost:3000](http://localhost:3000) to view the project in your browser.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to make some edits which will trigger the page reload for you to view changes live.
