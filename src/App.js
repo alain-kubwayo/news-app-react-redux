@@ -1,10 +1,12 @@
+import { BrowserRouter, Routes } from "react-router-dom";
+
 function App() {
   return (
-    <div>
-      <h1 className="font-bold uppercase underline text-2xl text-center">
-        News App
-      </h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        
+      </Routes>
+    </BrowserRouter>
   );
 }
 
