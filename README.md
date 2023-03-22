@@ -3,6 +3,7 @@
 This is an intermediate React-Redux project whose goal is to showcase news articles while making use of the [News API](https://newsapi.org)
 
 ## Project Requirements
+
 ### Technological Requirements:
 
 1. All news publishers, news articles, article contents, article images and article titles mentioned in the requirements below should be fetched using the News API.
@@ -29,6 +30,7 @@ This is an intermediate React-Redux project whose goal is to showcase news artic
 ## Running the project locally:
 
 In the directory where you want to save the project, run the following commands:
+
 1. `git clone https://github.com/alain-kubwayo/news-app-react-redux.git .`
 2. `npm install` to install all the project dependencies.
 3. `npm start` to run the app in the development mode.
