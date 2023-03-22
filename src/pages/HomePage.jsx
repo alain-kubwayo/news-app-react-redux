@@ -1,13 +1,15 @@
+import Heading from "../components/common/Heading";
+import Sidebar from "../components/layout/Sidebar";
 import ArticleList from "../components/modules/articles/ArticleList";
 
 const HomePage = () => {
     return ( 
         <div>
-            <div className="inline-block">
-                <h1 className="text-2xl font-extrabold uppercase sm:text-3xl lg:text-4xl text-sky-700">All Articles</h1>
-                <div className="w-1/2 h-2 bg-sky-800"></div>
+            <Heading className="text-2xl font-extrabold uppercase sm:text-3xl lg:text-4xl text-sky-700" />
+            <div className="flex flex-col sm:flex-row sm:gap-x-10">
+                <Sidebar />
+                <ArticleList />
             </div>
-            <ArticleList />
         </div>
      );
 }
