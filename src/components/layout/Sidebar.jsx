@@ -3,7 +3,7 @@ import Heading from "../common/Heading";
 const Sidebar = () => {
     return ( 
         <div className="py-10">
-            <Heading />
+            <Heading description="All Publishers" />
         </div>
      );
 }
