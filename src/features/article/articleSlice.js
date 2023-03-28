@@ -5,7 +5,7 @@ const API_KEY = "8fbc5a74b76c47e4bc86206399c15cb6";
 export const getArticles = createAsyncThunk("articles/getArticles", async () => {
     return fetch(`https://newsapi.org/v2/everything?q=tesla&from=2023-02-27&sortBy=publishedAt&apiKey=${API_KEY}`)
         .then(res => res.json())
-        .then(data => data.articles.slice(0, 10));
+        .then(data => data.articles);
 });
 
 const articleSlice = createSlice({
