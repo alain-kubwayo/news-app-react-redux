@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 const API_KEY = "8fbc5a74b76c47e4bc86206399c15cb6";
 
 export const getArticles = createAsyncThunk("articles/getArticles", async () => {
-    return fetch(`https://newsapi.org/v2/everything?q=tesla&from=2023-02-27&sortBy=publishedAt&apiKey=${API_KEY}`)
+    return fetch(`https://newsapi.org/v2/everything?q=tesla&from=2023-02-28&sortBy=publishedAt&apiKey=${API_KEY}`)
         .then(res => res.json())
         .then(data => data.articles);
 });

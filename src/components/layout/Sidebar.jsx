@@ -10,9 +10,9 @@ const Sidebar = () => {
                 description="All Publishers"
             />
             <ul className="mt-10">
-                { articles.map(article => (
+                { articles?.map((article, i) => (
                 <li 
-                    key={article.publishedAt}
+                    key={`sidebar-${i}`}
                     className="my-2 border-b cursor-pointer hover:text-sky-800 border-sky-400"
                 >{article.source.name}</li>
                 ))}
