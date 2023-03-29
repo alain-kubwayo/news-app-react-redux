@@ -1,7 +1,7 @@
 import Sidebar from "../components/layout/Sidebar";
 import ArticleList from "../components/modules/articles/ArticleList";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getArticles } from "../features/article/articleSlice";
 import { PuffLoader } from "react-spinners";
@@ -9,7 +9,6 @@ import { PuffLoader } from "react-spinners";
 const HomePage = () => {
     const { loading } = useSelector(state => state.articles);
     const dispatch = useDispatch();
-    console.log(loading);
     useEffect(() => {
         dispatch(getArticles());
     }, [dispatch]);
