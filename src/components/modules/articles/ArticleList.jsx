@@ -16,8 +16,8 @@ const ArticleList = () => {
             <div className="grid w-full grid-cols-1 mt-10 sm:grid-cols-2 lg:grid-cols-3 gap-y-10 sm:gap-4">
                 
                 { articles && articles.length > 0 ? 
-                    articles.slice(0, 10).map(article => (
-                        <ArticleCard key={article.title} {...article} />
+                    articles.slice(0, 10).map((article, i) => (
+                        <ArticleCard key={`article-list-${i}`} {...article} />
                     )) : <div>No article to load</div> 
                 }
             </div>

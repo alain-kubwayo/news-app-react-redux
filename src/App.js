@@ -8,6 +8,7 @@ function App() {
         <PageWrapper>
           <Routes>
             <Route path="/" element={<HomePage />}/>
+            {/* <Route path="/publisher-articles" element={<PublisherArticles />} /> */}
           </Routes>
         </PageWrapper>
       
