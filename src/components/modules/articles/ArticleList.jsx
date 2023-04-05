@@ -7,7 +7,7 @@ const ArticleList = () => {
     const { filteredArticles } = useSelector(state => state.articles);
     return ( 
         <div className="py-10">
-            <div className="flex sm:flex-row sm:justify-between">
+            <div className="flex flex-col sm:flex-row sm:justify-between">
                 <Heading 
                     className="text-lg font-extrabold uppercase sm:text-xl text-sky-700" 
                     description="Sample Articles"

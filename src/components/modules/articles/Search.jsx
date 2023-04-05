@@ -11,7 +11,7 @@ const Search = () => {
         <input 
             type="search"
             onChange={handleChange}
-            className="px-4 py-2 border outline-none border-sky-900"
+            className="px-4 py-2 mt-4 border outline-none border-sky-900 sm:mt-0"
             placeholder="Search news..."
         />
     );
