@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getArticles } from "../features/article/articleSlice";
 import { useEffect } from "react";
@@ -14,13 +14,20 @@ const PublisherArticlesPage = () => {
      }, [dispatch]);
     
     return ( 
-        <div className="bg-sky-800">
-            { publisherArticles.length === 0 ?<span>No publication found</span> : publisherArticles?.map(article => (
-                <div key={id} class="py-4 my-4 bg-red-900">
-                    <h2 className="pb-4 border-b-2">{article.title}</h2>
-                    <p>{article.description}</p>
-                </div>
-            ))}
+        <div>
+            <Link to="/" className="inline-block w-full my-10 text-center text-blue-800 hover:underline">All Articles</Link>
+            { publisherArticles.length === 0 ? (
+                <div className="max-w-2xl py-4 mx-auto my-4 font-bold text-center text-gray-800 uppercase bg-gray-200 rounded-md">OOPS, No publication found</div>
+             ) : (
+                publisherArticles?.map(article => (
+                    <div key={id} className="max-w-2xl py-4 mx-auto my-4 overflow-hidden rounded-md">
+                        <img src={article.urlToImage} alt={article.title} />
+                        <h2 className="my-4 font-semibold">{article.title}</h2>
+                        <p className="text-lg">{article.content}</p>
+                    </div>
+                ))
+            )
+            }
         </div>
     );
 };
