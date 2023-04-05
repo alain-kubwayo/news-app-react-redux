@@ -1,33 +1,41 @@
 import { Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { getArticles } from "../features/article/articleSlice";
+import { getPublisherArticles } from "../features/publisherArticle/publisherArticleSlice";
 import { useEffect } from "react";
+import { nanoid } from "@reduxjs/toolkit";
+import { PuffLoader } from "react-spinners";
+
 
 const PublisherArticlesPage = () => {
     const dispatch = useDispatch();
     const { id } = useParams();
-    const { articles } = useSelector(state => state.articles);
-    const publisherArticles = articles.filter(article => article.source.name === id);
+    const { publisherArticles, loading } = useSelector(state => state.publisherArticles );
 
     useEffect(() => {
-        dispatch(getArticles());
+        dispatch(getPublisherArticles(id));
      }, [dispatch]);
     
     return ( 
         <div>
             <Link to="/" className="inline-block w-full my-10 text-center text-blue-800 hover:underline">All Articles</Link>
-            { publisherArticles.length === 0 ? (
-                <div className="max-w-2xl py-4 mx-auto my-4 font-bold text-center text-gray-800 uppercase bg-gray-200 rounded-md">OOPS, No publication found</div>
-             ) : (
-                publisherArticles?.map(article => (
-                    <div key={id} className="max-w-2xl py-4 mx-auto my-4 overflow-hidden rounded-md">
-                        <img src={article.urlToImage} alt={article.title} />
-                        <h2 className="my-4 font-semibold">{article.title}</h2>
-                        <p className="text-lg">{article.content}</p>
-                    </div>
-                ))
-            )
+            {loading && (<div className="flex items-center justify-center w-full h-screen">
+                <PuffLoader 
+                    color="#164E63"
+                    size={300} 
+                />
+            </div>)
             }
+            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
+                {
+                    publisherArticles?.map(article => (
+                        <div key={`${nanoid()}`} className="max-w-2xl px-3 py-4 mx-auto my-4 mb-4 overflow-hidden border border-gray-700 rounded-md">
+                            <img src={article.urlToImage} alt={article.title} />
+                            <h2 className="my-4 font-semibold">{article.title}</h2>
+                            <p className="text-lg">{article.content}</p>
+                        </div>
+                    ))
+                }
+            </div>
         </div>
     );
 };

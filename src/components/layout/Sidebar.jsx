@@ -37,7 +37,7 @@ const Sidebar = () => {
             />
             <ul className="mt-10">
                 { morePublishers.map(({id, name}) => ( 
-                    <Link key={id} to={`/publisher-articles/${name}`}>
+                    <Link key={id} to={`/publisher-articles/${id}`}>
                         <li 
                             key={id}
                             className="my-2 border-b cursor-pointer hover:text-sky-800 border-sky-400"

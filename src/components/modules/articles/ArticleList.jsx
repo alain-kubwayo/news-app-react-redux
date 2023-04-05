@@ -2,9 +2,11 @@ import { useSelector } from "react-redux";
 import ArticleCard from "./ArticleCard";
 import Heading from "../../common/Heading";
 import Search from "./Search";
+import { nanoid } from "@reduxjs/toolkit";
 
 const ArticleList = () => {
     const { filteredArticles } = useSelector(state => state.articles);
+    
     return ( 
         <div className="py-10">
             <div className="flex flex-col sm:flex-row sm:justify-between">
@@ -18,7 +20,7 @@ const ArticleList = () => {
                 
                 { filteredArticles && filteredArticles.length > 0 ? 
                     filteredArticles.slice(0, 10).map((article, i) => (
-                        <ArticleCard key={`article-list-${i}`} {...article} />
+                        <ArticleCard key={`${nanoid()}`} {...article} />
                     )) : <div>No article to load</div> 
                 }
             </div>
