@@ -16,6 +16,7 @@ const articleSlice = createSlice({
   name: 'articles',
   initialState: {
     articles: [],
+    filteredArticles: [],
     loading: false,
   },
   extraReducers: {
@@ -25,11 +26,21 @@ const articleSlice = createSlice({
     [getArticles.fulfilled]: (state, action) => {
       state.loading = false;
       state.articles = action.payload;
+      state.filteredArticles = state.articles;
     },
     [getArticles.rejected]: (state, action) => {
       state.loading = false;
     },
   },
+  reducers: {
+    filterArticles: (state, action) => {
+      const newsArticles = [...state.articles];
+      const filteredNewsArticles = newsArticles.filter(article => article.title.toLowerCase().includes(action.payload));
+      state.filteredArticles = filteredNewsArticles;
+    }
+  }
 });
+
+export const { filterArticles } = articleSlice.actions;
 
 export default articleSlice.reducer;
