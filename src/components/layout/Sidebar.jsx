@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 const Sidebar = () => {
     
     const dispatch = useDispatch();
-    const {publishers} = useSelector(state => state.articles);
+    const { publishers } = useSelector(state => state.articles);
     const [morePublishers,setMorePublishers]=useState(publishers.slice(0,10))
-    // const publishers = articles.map(article => article.source.name);
+   
 
     useEffect(() => {
        dispatch(getPublishers())
@@ -32,7 +32,7 @@ const handleMorePublishers =()=>{
             <ul className="mt-10">
                 { morePublishers.map(({id, name,url}) => { 
                     
-                    return <Link to={url}>
+                    return <Link to={`/publisher-articles/${name}`}>
                     <li 
                     key={id}
                     className="my-2 border-b cursor-pointer hover:text-sky-800 border-sky-400"
