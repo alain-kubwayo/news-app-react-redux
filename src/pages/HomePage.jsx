@@ -24,12 +24,16 @@ const HomePage = () => {
     }
     return ( 
         <div>
-            <div className="flex flex-col items-start sm:flex-row sm:gap-x-10">
-                <Sidebar />
-                <ArticleList />
+            <div className="grid grid-cols-1 sm:grid-cols-4 gap-x-10">
+                <div className="sm:col-span-1">
+                    <Sidebar />
+                </div>
+                <div className="sm:col-span-3">
+                    <ArticleList />
+                </div>
             </div>
         </div>
      );
-}
+};
  
 export default HomePage;

@@ -15,6 +15,6 @@ const Search = () => {
             placeholder="Search news..."
         />
     );
-}
+};
  
 export default Search;

@@ -5,6 +5,6 @@ const Navbar = () => {
             <p className="text-sm text-center">Your trusted partner in bringing you the latest interesting news from around the world.</p>
         </nav>
      );
-}
+};
  
 export default Navbar;

@@ -4,7 +4,7 @@ export const getPublishers = createAsyncThunk(
   'sources/getPublishers',
   async () => {
     return fetch(
-      `https://news-proxy.netlify.app/api/top-headlines/sources?q=keyword&apiKey=22d16d0f1f644991a794a00fd67f742e`
+      `${process.env.REACT_APP_API_URL}/top-headlines/sources?q=keyword&apiKey=${process.env.REACT_APP_API_KEY}`
     )
       .then((res) => res.json())
       .then((data) => data.sources);

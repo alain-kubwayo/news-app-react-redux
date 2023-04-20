@@ -2,7 +2,6 @@ import { Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getPublisherArticles } from "../features/publisherArticle/publisherArticleSlice";
 import { useEffect } from "react";
-import { nanoid } from "@reduxjs/toolkit";
 import { PuffLoader } from "react-spinners";
 
 
@@ -13,7 +12,7 @@ const PublisherArticlesPage = () => {
 
     useEffect(() => {
         dispatch(getPublisherArticles(id));
-     }, [dispatch]);
+     }, [dispatch, id]);
     
     return ( 
         <div>
@@ -27,8 +26,8 @@ const PublisherArticlesPage = () => {
             }
             <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
                 {
-                    publisherArticles?.map(article => (
-                        <div key={`${nanoid()}`} className="max-w-2xl px-3 py-4 mx-auto my-4 mb-4 overflow-hidden border border-gray-700 rounded-md">
+                    publisherArticles?.map((article, i) => (
+                        <div key={`publisher-article-${i}`} className="max-w-2xl px-3 py-4 mx-auto my-4 mb-4 overflow-hidden border border-gray-700 rounded-md">
                             <img src={article.urlToImage} alt={article.title} />
                             <h2 className="my-4 font-semibold">{article.title}</h2>
                             <p className="text-lg">{article.content}</p>
